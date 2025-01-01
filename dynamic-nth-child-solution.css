@@ -1,0 +1,26 @@
+This solution uses JavaScript to add classes to list items dynamically. It iterates through the list items and adds a class (`even` or `odd`) based on their index.  This approach ensures that styling remains correct even after new list items are added to the DOM.
+
+```javascript
+const listItems = document.querySelectorAll('#myList li');
+
+listItems.forEach((item, index) => {
+  if (index % 2 === 0) {
+    item.classList.add('even');
+  } else {
+    item.classList.add('odd');
+  }
+});
+
+// Add event listener to handle dynamically added items (e.g., via AJAX)
+// ...
+```
+
+```css
+/* dynamic-nth-child-solution.css */
+#myList li.even {
+  background-color: lightblue;
+}
+#myList li.odd {
+  background-color: lightpink;
+}
+```
